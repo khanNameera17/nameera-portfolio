@@ -1,4 +1,6 @@
+import About from "@/components/about";
 import Hero from "@/components/home";
+import Projects from "@/components/projects";
 
 export default function Home() {
   return (
@@ -6,17 +8,16 @@ export default function Home() {
       <section id="home">
         <Hero />
       </section>
-
-      {/* <section id="about">
+      <section id="about">
         <About />
       </section>
-      <section id="projects">
+      {/* <section id="skills">
+        <Skills />
+      </section> */}
+      {/* <section id="projects">
         <Projects />
-      </section>
-      <section id="services">
-        <Services />
-      </section>
-      <section id="contact">
+      </section> */}
+      {/* <section id="contact">
         <Contact />
       </section> */}
     </>
