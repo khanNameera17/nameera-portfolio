@@ -32,8 +32,8 @@ export default function Navbar() {
         <Image
           src={Home}
           alt="Profile"
-          width={40}
-          height={40}
+          width={50}
+          height={50}
           className="avatar"
         />
       </div>

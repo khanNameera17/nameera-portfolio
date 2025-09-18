@@ -4,8 +4,8 @@
  justify-content: space-between;
  gap: 3rem;
  padding: 4rem 2rem;
- background: #6f6f6f; // dark background like screenshot
- color: white;
+ // background: #6f6f6f; // dark background like screenshot
+ color: black;
  min-height: 100vh;  
  .skillsLeft {
    flex: 1;
@@ -19,7 +19,7 @@
 
    .skillsSubtitle {
      font-size: 1rem;
-     color: #ccc;
+     color: #797878;
      margin-bottom: 2rem;
      max-width: 500px;
    }

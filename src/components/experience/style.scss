@@ -1,0 +1,138 @@
+.aboutSection {
+ padding: 4rem 2rem;
+ background: #fff;
+ color: #111;
+ min-height: 100vh;
+}
+
+.aboutContainer {
+ max-width: 1200px;
+ margin: 0 auto;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 3rem;
+
+ flex-direction: row; // Desktop: side by side
+
+ @media (max-width: 900px) {
+   flex-direction: column; // Mobile: stacked
+   text-align: center;
+ }
+}
+
+.aboutRight {
+ flex: 1;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ position: relative;
+ min-height: 300px;
+
+ .iconGrid {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 2rem;
+   justify-items: center;
+   align-items: center;
+
+   @media (max-width: 900px) {
+     display: flex;
+     gap: 1.5rem;
+     overflow-x: auto; /* Scrollable row */
+     padding-bottom: 1rem;
+     scrollbar-width: none; /* Firefox */
+     -ms-overflow-style: none; /* IE/Edge */
+   }
+
+   @media (max-width: 900px) {
+     &::-webkit-scrollbar {
+       display: none; /* Hide scrollbar in WebKit */
+     }
+   }
+ }
+
+ .icon {
+   font-size: 3rem;
+   cursor: pointer;
+   transition: transform 0.6s ease, opacity 0.6s ease;
+
+   &:hover {
+     transform: scale(1.15);
+   }
+ }
+}
+
+.aboutLeft {
+ flex: 1;
+
+ .aboutTitle {
+   font-size: 2.4rem;
+   font-weight: 800;
+   margin-bottom: 1.2rem;
+ }
+
+ .aboutDesc {
+   font-size: 1.1rem;
+   line-height: 1.7;
+   margin-bottom: 2rem;
+   color: #444;
+ }
+
+ .aboutStats {
+   display: flex;
+   gap: 2.5rem;
+   margin-bottom: 2rem;
+
+   @media (max-width: 600px) {
+     justify-content: center;
+     flex-wrap: wrap;
+     gap: 1.5rem;
+   }
+
+   .stat {
+     text-align: left;
+
+     h3 {
+       font-size: 2.2rem;
+       font-weight: 900;
+       color: #4f46e5; // Indigo accent
+     }
+     p {
+       font-size: 0.95rem;
+       font-weight: 500;
+       color: #222;
+     }
+   }
+ }
+
+ .aboutContact {
+   margin-bottom: 2rem;
+   font-size: 1rem;
+   line-height: 1.6;
+
+   strong {
+     color: #000;
+   }
+
+   a {
+     color: #4f46e5;
+     text-decoration: none;
+   }
+ }
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+ .aboutLeft {
+   margin-top: 2rem;
+
+   .aboutTitle {
+     font-size: 2rem;
+   }
+
+   .aboutDesc {
+     font-size: 1rem;
+   }
+ }
+}
