@@ -34,7 +34,7 @@ const Experience = () => {
     <section className="aboutSection" id="about">
       <div className="aboutContainer">
         {/* Right Side - Popping Tech Icons */}
-        <div className="aboutRight">
+        {/* <div className="aboutRight">
           <div className="iconGrid">
             {icons.map((icon, i) => {
               const IconComponent = icon.component
@@ -59,7 +59,7 @@ const Experience = () => {
               )
             })}
           </div>
-        </div>
+        </div> */}
 
         {/* Left Side */}
         <div className="aboutLeft">
