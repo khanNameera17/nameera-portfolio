@@ -45,10 +45,8 @@
      -ms-overflow-style: none; /* IE/Edge */
    }
 
-   @media (max-width: 900px) {
-     &::-webkit-scrollbar {
-       display: none; /* Hide scrollbar in WebKit */
-     }
+   &::-webkit-scrollbar {
+     display: none; /* Hide scrollbar in WebKit */
    }
  }
 
