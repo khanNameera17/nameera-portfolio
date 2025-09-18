@@ -1,9 +1,9 @@
 "use client"
 import { useEffect, useState } from "react"
-import Home from "../../assets/Home.jpg"
 import Image from "next/image"
 import Link from "next/link"
-import './style.scss'
+import Home from "../../assets/Home.jpg"
+import "./style.scss"
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -38,7 +38,7 @@ export default function Navbar() {
         />
       </div>
 
-      {/* Hamburger button (mobile) */}
+      {/* Hamburger (mobile only) */}
       <button
         className="hamburger"
         onClick={() => setMenuOpen(!menuOpen)}

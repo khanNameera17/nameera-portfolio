@@ -5,18 +5,18 @@
  align-items: center;
  padding: 1rem 3rem;
 
- position: fixed;            
- top: 1rem;                  
+ position: fixed;
+ top: 1rem;
  left: 50%;
- transform: translateX(-50%); // ✅ centered horizontally
+ transform: translateX(-50%);
 
  background: white;
  z-index: 1000;
  border: 1px solid grey;
  border-radius: 40px;
- width: 40%;            // ✅ desktop default
+ width: 40%;
  max-width: 1200px;
- min-width: 280px;      // ✅ avoids breaking on tiny phones
+ min-width: 280px;
  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
  transition: all 0.3s ease;
 }
@@ -45,7 +45,7 @@
      padding: 0.5rem 1rem;
      border-radius: 20px;
      transition: all 0.3s ease;
-     font-size: clamp(0.9rem, 2vw, 1.2rem); // ✅ fluid font size
+     font-size: clamp(0.9rem, 2vw, 1.2rem);
 
      &:hover {
        background: #6366f1;
@@ -70,7 +70,7 @@
  cursor: pointer;
  font-weight: 500;
  transition: all 0.3s ease;
- font-size: clamp(0.9rem, 2vw, 1rem); // ✅ adjusts automatically
+ font-size: clamp(0.9rem, 2vw, 1rem);
 
  &:hover {
    background: #6366f1;
@@ -87,23 +87,35 @@
 
 @media (max-width: 1024px) {
  .navbar {
-   width: 60%; 
+   width: 60%;
    padding: 0.8rem 2rem;
  }
 }
 
 @media (max-width: 768px) {
  .navbar {
-   width: 85%; 
-   padding: 0.8rem 1.5rem;
+   width: auto;
+   padding: 0;
+   background: none;    // ✅ remove white background
+   border: none;        // ✅ remove border
+   border-radius: 0;    // ✅ remove rounded box
+   box-shadow: none;    // ✅ remove shadow
+   left: auto;
+   transform: none;
+   right: 1rem;         // ✅ place hamburger on right
+ }
+
+ /* Hide logo on small screens */
+ .logo {
+   display: none;
  }
 
  .navLinks {
-   display: none; 
+   display: none;
    flex-direction: column;
    gap: 1rem;
    position: absolute;
-   top: 100%; 
+   top: 3rem;
    right: 0;
    background: white;
    padding: 1rem 2rem;
@@ -111,29 +123,31 @@
    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
    &.open {
-     display: flex; 
+     display: flex;
    }
  }
 
+ /* Default hamburger style */
  .hamburger {
    display: block;
    cursor: pointer;
-   font-size: 1.8rem; // ✅ slightly bigger for touch screens
+   color: #6366f1;
+   font-size: 1.8rem;
    background: none;
    border: none;
+   z-index: 1100;
+    margin-left: auto;
  }
 }
 
 @media (max-width: 480px) {
- .navbar {
-   width: 95%;   // ✅ almost full width for tiny phones
-   top: 0.5rem;  // ✅ tighter margin
-   padding: 0.6rem 1rem;
-   border-radius: 20px;
+ .navLinks {
+   width: 90%;
+   right: 5%;
  }
 
  .contactBtn {
-   padding: 0.6rem 1rem; // ✅ smaller button
+   padding: 0.6rem 1rem;
  }
 }
 
