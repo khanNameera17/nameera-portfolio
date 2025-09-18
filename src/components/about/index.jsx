@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react"
 import Image from "next/image"
-import Skills from "../../assets/Skills.jpg" // replace with your image
+// import Skills from "../../assets/Sky.jpg" // replace with your image
 import "./style.scss"
 import Experience from "../experience"
 
@@ -45,8 +45,8 @@ export default function About() {
 
       <div className="skillsRight">
       <Image
-    src={Skills}   // ✅ put your image path here
-    alt="Skills"
+    src="/images/Sky.jpg"  // ✅ put your image path here
+    alt="Sky Image"
     width={400}
     height={400}
     className="skillsImage"
