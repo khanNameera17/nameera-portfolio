@@ -3,7 +3,7 @@ import { useState } from "react"
 import Image from "next/image"
 // import Skills from "../../assets/Sky.jpg" // replace with your image
 import "./style.scss"
-import Experience from "../experience"
+// import Experience from "../experience"
 
 const skillsList = [
   { id: 1, title: "Website Development", content: "Building responsive, SEO-friendly, and scalable websites." },
@@ -52,7 +52,7 @@ export default function About() {
     className="skillsImage"
   />      </div>
     </div>
-    <Experience />
+    {/* <Experience /> */}
     </>
   )
 }
