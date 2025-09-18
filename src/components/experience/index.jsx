@@ -12,7 +12,7 @@ import {
   FaJs,
 } from "react-icons/fa"
 import { SiNextdotjs, SiMongodb, SiCanva } from "react-icons/si"
-import "./style.scss"
+// import "./style.scss"
 
 const icons = [
   { id: "react", component: <FaReact />, color: "#61dafb", label: "React" },
