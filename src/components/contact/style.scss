@@ -1,7 +1,142 @@
-.contact{
- background-color: rgb(158, 158, 207);
+.contact {
+ display: flex;
  min-height: 100vh;
- text-align: center;
- font-size: 200px;
  align-items: center;
+ justify-content: center;
+ padding: 20px; // small breathing space on mobile
+
+ .contact-left {
+   flex: 1;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   img {
+     width: 100%;
+     max-width: 300px;
+     border-radius: 10px;
+   }
+ }
+
+ .contact-right {
+   flex: 1;
+   padding: 40px;
+
+   h2 {
+     color: black;
+     margin-bottom: 20px;
+     font-size: 2.5rem;
+     text-align: left;
+   }
+
+   form {
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+
+     label {
+       font-size: 16px;
+       font-weight: 600;
+       color: black;
+       margin-bottom: 5px;
+       display: block;
+     }
+
+     input,
+     select,
+     textarea {
+       width: 100%;
+       padding: 12px;
+       border: 2px solid rgb(174, 178, 237);
+       border-radius: 6px;
+       background: white;
+       color: black;
+       font-size: 16px;
+
+       &:focus {
+         outline: none;
+         border-color: darkviolet;
+       }
+     }
+
+     /* Inline row */
+     .form-row.inline {
+       display: flex;
+       gap: 20px;
+
+       .form-group {
+         flex: 1;
+         display: flex;
+         flex-direction: column;
+       }
+     }
+
+     button {
+      padding: 15px 20px;
+      background: transparent;   // ❌ no fill
+      color: rgb(129, 123, 208);             // ✅ text color
+      border: 2px solid rgb(150, 145, 213); // ✅ border
+      border-radius: 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      width: fit-content;        // keeps it snug to text, aligned left
+    
+      &:hover {
+        background: rgba(128, 0, 128, 0.1); // subtle light purple on hover
+      }
+    }
+    
+   }
+ }
+
+ /* 📱 Responsive Styles */
+ @media (max-width: 992px) {
+   flex-direction: column;
+   text-align: center;
+
+   .contact-left {
+     margin-bottom: 30px;
+
+     img {
+       max-width: 250px;
+     }
+   }
+
+   .contact-right {
+     padding: 20px;
+
+     h2 {
+       font-size: 2rem;
+       text-align: center;
+     }
+
+     form {
+       .form-row.inline {
+         flex-direction: column;
+         gap: 15px;
+       }
+
+       input,
+       select,
+       textarea {
+         font-size: 14px;
+         padding: 10px;
+       }
+
+       button {
+         font-size: 14px;
+         padding: 12px;
+       }
+     }
+   }
+ }
+
+ @media (max-width: 576px) {
+   .contact-right {
+     h2 {
+       font-size: 1.6rem;
+     }
+   }
+ }
 }
