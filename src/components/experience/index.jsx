@@ -1,5 +1,4 @@
 import React from "react"
-import { motion } from "framer-motion"
 import {
   FaReact,
   FaHtml5,
@@ -33,33 +32,22 @@ const Experience = () => {
   return (
     <section className="aboutSection" id="about">
       <div className="aboutContainer">
-        {/* Right Side - Popping Tech Icons */}
-        {/* <div className="aboutRight">
+        {/* Right Side - Tech Icons */}
+        <div className="aboutRight">
           <div className="iconGrid">
-            {icons.map((icon, i) => {
+            {icons.map((icon) => {
               const IconComponent = icon.component
               return (
-                <motion.div
-                  key={icon.id}
-                  className="iconCard"
-                  animate={{ scale: [1, 1.3, 1] }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    repeatDelay: 1.5,
-                    ease: "easeInOut",
-                    delay: i * 0.3,
-                  }}
-                >
+                <div key={icon.id} className="iconCard">
                   <div className="icon" style={{ color: icon.color }}>
                     <IconComponent />
                   </div>
                   <p className="iconLabel">{icon.label}</p>
-                </motion.div>
+                </div>
               )
             })}
           </div>
-        </div> */}
+        </div>
 
         {/* Left Side */}
         <div className="aboutLeft">

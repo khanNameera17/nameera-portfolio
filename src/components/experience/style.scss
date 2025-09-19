@@ -3,134 +3,222 @@
  background: #fff;
  color: #111;
  min-height: 100vh;
-}
 
-.aboutContainer {
- max-width: 1200px;
- margin: 0 auto;
- display: flex;
- align-items: center;
- justify-content: space-between;
- gap: 3rem;
-
- flex-direction: row; // Desktop: side by side
-
- @media (max-width: 900px) {
-   flex-direction: column; // Mobile: stacked
-   text-align: center;
- }
-}
-
-.aboutRight {
- flex: 1;
- display: flex;
- justify-content: center;
- align-items: center;
- position: relative;
- min-height: 300px;
-
- .iconGrid {
-   display: grid;
-   grid-template-columns: repeat(4, 1fr);
-   gap: 2rem;
-   justify-items: center;
+ .aboutContainer {
+   max-width: 1200px;
+   margin: 0 auto;
+   display: flex;
    align-items: center;
+   justify-content: space-between;
+   gap: 3rem;
+   flex-direction: row;
 
    @media (max-width: 900px) {
-     display: flex;
-     gap: 1.5rem;
-     overflow-x: auto; /* Scrollable row */
-     padding-bottom: 1rem;
-     scrollbar-width: none; /* Firefox */
-     -ms-overflow-style: none; /* IE/Edge */
+     flex-direction: column;
+     text-align: center;
    }
 
-   &::-webkit-scrollbar {
-     display: none; /* Hide scrollbar in WebKit */
+   /* ---------- RIGHT SIDE (Icons) ---------- */
+   // .aboutRight {
+   //   flex: 1;
+   //   display: flex;
+   //   justify-content: center;
+   //   align-items: center;
+   //   position: relative;
+   //   min-height: 300px;
+
+   //   .iconGrid {
+   //     display: grid;
+   //     grid-template-columns: repeat(4, 1fr);
+   //     gap: 2rem;
+   //     justify-items: center;
+   //     align-items: center;
+
+   //     /* Tablets */
+   //     @media (max-width: 1024px) {
+   //       grid-template-columns: repeat(3, 1fr);
+   //       gap: 1.5rem;
+   //     }
+
+   //     /* Large phones */
+   //     @media (max-width: 768px) {
+   //       grid-template-columns: repeat(2, 1fr);
+   //       gap: 1.2rem;
+   //     }
+
+   //     /* Small phones */
+   //     @media (max-width: 480px) {
+   //       grid-template-columns: repeat(1, 1fr);
+   //       gap: 1rem;
+   //     }
+
+   //     .iconCard {
+   //       display: flex;
+   //       flex-direction: column;
+   //       align-items: center;
+   //       gap: 0.5rem;
+
+   //       .icon {
+   //         font-size: 3rem;
+   //         cursor: pointer;
+   //         transition: transform 0.3s ease, opacity 0.3s ease;
+   //         transform-origin: center;
+
+   //         &:hover {
+   //           transform: scale(1.2);
+   //           z-index: 2;
+   //         }
+   //       }
+
+   //       .iconLabel {
+   //         font-size: 0.9rem;
+   //         font-weight: 500;
+   //         color: #444;
+   //       }
+   //     }
+   //   }
+   // }
+   .aboutRight {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 300px;
+    // border: 2px solid grey;
+    border-radius: 20px;
+    &::before {
+     content: "";
+     position: absolute;
+     inset: 0;
+     border-radius: 1.2rem;
+     padding: 3px;
+     background: linear-gradient(90deg, transparent, #a78bfa, #6366f1, #878689, transparent);
+     background-size: 300% 100%;
+     -webkit-mask: 
+       linear-gradient(#fff 0 0) content-box, 
+       linear-gradient(#fff 0 0);
+     -webkit-mask-composite: xor;
+     mask-composite: exclude;
+     animation: borderRun 5s linear infinite;
+     z-index: 1;
    }
- }
+    .iconGrid {
+      display: grid;
+      // grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      grid-template-columns: repeat(4, 1fr); /* same as old */
+      gap: 0.5rem;
+      justify-items: center;
+      align-items: center;
+      width: 100%; /* full width so grid adapts */
+      max-width: 800px; /* keeps it balanced on big screens */
+      margin: 0 auto;
+    }
+  
+    .icon {
+      font-size: 3rem;
+      cursor: pointer;
+      transition: transform 0.4s ease;
+      animation: floatIcon 3s ease-in-out infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      &:hover {
+        transform: scale(1.15) translateY(-6px);
+      }
+    }
+  }
+  
+  /* Floating animation */
+  @keyframes floatIcon {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+   /* ---------- LEFT SIDE (Text) ---------- */
+   .aboutLeft {
+     flex: 1;
 
- .icon {
-   font-size: 3rem;
-   cursor: pointer;
-   transition: transform 0.6s ease, opacity 0.6s ease;
-
-   &:hover {
-     transform: scale(1.15);
-   }
- }
-}
-
-.aboutLeft {
- flex: 1;
-
- .aboutTitle {
-   font-size: 2.4rem;
-   font-weight: 800;
-   margin-bottom: 1.2rem;
- }
-
- .aboutDesc {
-   font-size: 1.1rem;
-   line-height: 1.7;
-   margin-bottom: 2rem;
-   color: #444;
- }
-
- .aboutStats {
-   display: flex;
-   gap: 2.5rem;
-   margin-bottom: 2rem;
-
-   @media (max-width: 600px) {
-     justify-content: center;
-     flex-wrap: wrap;
-     gap: 1.5rem;
-   }
-
-   .stat {
-     text-align: left;
-
-     h3 {
-       font-size: 2.2rem;
-       font-weight: 900;
-       color: #4f46e5; // Indigo accent
+     .aboutTitle {
+       font-size: 2.4rem;
+       font-weight: 800;
+       margin-bottom: 1.2rem;
      }
-     p {
-       font-size: 0.95rem;
-       font-weight: 500;
-       color: #222;
+
+     .aboutDesc {
+       font-size: 1.1rem;
+       line-height: 1.7;
+       margin-bottom: 2rem;
+       color: #444;
+     }
+
+     .aboutStats {
+       display: flex;
+       gap: 2.5rem;
+       margin-bottom: 2rem;
+
+       @media (max-width: 600px) {
+         justify-content: center;
+         flex-wrap: wrap;
+         gap: 1.5rem;
+       }
+
+       .stat {
+         text-align: left;
+
+         h3 {
+           font-size: 2.2rem;
+           font-weight: 900;
+           color: #4f46e5;
+         }
+
+         p {
+           font-size: 0.95rem;
+           font-weight: 500;
+           color: #222;
+         }
+       }
+     }
+
+     .aboutContact {
+       margin-bottom: 2rem;
+       font-size: 1rem;
+       line-height: 1.6;
+
+       strong {
+         color: #000;
+       }
+
+       a {
+         color: #4f46e5;
+         text-decoration: none;
+       }
      }
    }
  }
 
- .aboutContact {
-   margin-bottom: 2rem;
-   font-size: 1rem;
-   line-height: 1.6;
+ /* ---------- Responsive Typography ---------- */
+ @media (max-width: 768px) {
+   .aboutContainer {
+     .aboutLeft {
+       margin-top: 2rem;
 
-   strong {
-     color: #000;
-   }
+       .aboutTitle {
+         font-size: 2rem;
+       }
 
-   a {
-     color: #4f46e5;
-     text-decoration: none;
-   }
- }
-}
-
-/* Responsive Typography */
-@media (max-width: 768px) {
- .aboutLeft {
-   margin-top: 2rem;
-
-   .aboutTitle {
-     font-size: 2rem;
-   }
-
-   .aboutDesc {
-     font-size: 1rem;
+       .aboutDesc {
+         font-size: 1rem;
+       }
+     }
    }
  }
 }
