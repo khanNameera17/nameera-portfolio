@@ -73,4 +73,21 @@
    color: #333;
    border: 1px solid #ddd;
  }
+ .projectLink {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6366f1; /* violet shade */
+  border: 1px solid #6366f1;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #6366f1;
+    color: #fff;
+  }
+}
+
 }

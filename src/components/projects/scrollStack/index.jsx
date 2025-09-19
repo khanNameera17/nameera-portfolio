@@ -8,28 +8,33 @@ import './style.scss'
 gsap.registerPlugin(ScrollTrigger)
 
 const defaultProjects = [
-  {
-    title: 'HRMS Dashboard',
-    description:
-      'A comprehensive human resource management tool that provides real-time Attendance data and insights for business metrics.',
-    tags: ['React', 'Mongo DB', 'Node.js'],
-    image: '/images/HRMS.png'
-  },
-  {
-    title: 'Hotel Booking',
-    description:
-      'A user-friendly hotel booking web application that allows customers to search, compare, and reserve rooms seamlessly.',
-    tags: ['Next', 'Mongo DB', 'Node.js'],
-    image: '/images/Hotel-Booking.png'
-  },
-  {
-    title: 'E-Commerce Platform',
-    description:
-      'Complete online shopping solution with product catalog, cart functionality, and payment integration.',
-    tags: ['Wordpress'],
-    image: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fb6735c9-86b8-405f-ad40-0ad9b7967ff6.png'
-  }
+ {
+   title: 'HRMS Dashboard',
+   description:
+     'A comprehensive human resource management tool that provides real-time Attendance data and insights for business metrics.',
+   tags: ['React', 'Mongo DB', 'Node.js'],
+   image: '/images/HRMS.png',
+   link: 'https://hrms-admin-frontend.vercel.app/login'
+ },
+ {
+   title: 'Hotel Booking',
+   description:
+     'A user-friendly hotel booking web application that allows customers to search, compare, and reserve rooms seamlessly.',
+   tags: ['Next', 'Mongo DB', 'Node.js'],
+   image: '/images/Hotel-Booking.png',
+   link: 'https://your-hotel-booking-link.com'
+ },
+ {
+   title: 'Company Portfolio',
+   description:
+     'A professional company portfolio website showcasing services, projects, and achievements with a clean design, responsive layout, and easy navigation for clients to explore.',
+   tags: ["React","NodeJs","ExpressJs"],
+   image:
+     '/images/Company-Port.png',
+   link: 'https://portfolio-90tib0r3m-khannameera17s-projects.vercel.app/'
+ }
 ]
+
 
 export default function ScrollStackProjects({ projects = defaultProjects }) {
   const containerRef = useRef(null)
@@ -80,10 +85,22 @@ export default function ScrollStackProjects({ projects = defaultProjects }) {
            <h3>{p.title}</h3>
            <p>{p.description}</p>
            <div className="tags">
-             {p.tags.map((t, idx) => (
-               <span key={idx}>{t}</span>
-             ))}
-           </div>
+  {p.tags.map((t, idx) => (
+    <span key={idx}>{t}</span>
+  ))}
+  {/* Project Link */}
+  {p.link && (
+    <a
+      href={p.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="projectLink"
+    >
+      View Project →
+    </a>
+  )}
+</div>
+
          </div>
        </article>
      ))}

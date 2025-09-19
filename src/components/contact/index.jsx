@@ -46,7 +46,7 @@ const Contact = () => {
           {/* Message */}
           <div className="form-row">
             <label htmlFor="message">What can I help you with?</label>
-            <textarea id="message"placeholder="Hello,I'd like to enquire about"  rows="5" required />
+            <textarea id="message"placeholder="Hello,I'd like to enquire about..." rows="5" required />
           </div>
 
           {/* Submit button */}
