@@ -62,27 +62,32 @@ export default function ScrollStackProjects({ projects = defaultProjects }) {
   }, [projects])
 
   return (
-    <section
-      className="scrollStackContainer"
-      style={{ height: `${projects.length * 40}vh` }}
-      ref={containerRef}
-    >
-      {projects.map((p, i) => (
-        <article key={i} className="projectCard">
-          <div className="projectCardImage">
-            <img src={p.image} alt={p.title} />
-          </div>
-          <div className="projectCardContent">
-            <h3>{p.title}</h3>
-            <p>{p.description}</p>
-            <div className="tags">
-              {p.tags.map((t, idx) => (
-                <span key={idx}>{t}</span>
-              ))}
-            </div>
-          </div>
-        </article>
-      ))}
-    </section>
-  )
+   <section
+     className="scrollStackContainer"
+     style={{ height: `${projects.length * 40}vh` }}
+     ref={containerRef}
+   >
+     {/* Heading */}
+     <h2 className="projectsHeading">My Work</h2>
+     {/* <p>This is some of my work check this out</p> */}
+ 
+     {projects.map((p, i) => (
+       <article key={i} className="projectCard">
+         <div className="projectCardImage">
+           <img src={p.image} alt={p.title} />
+         </div>
+         <div className="projectCardContent">
+           <h3>{p.title}</h3>
+           <p>{p.description}</p>
+           <div className="tags">
+             {p.tags.map((t, idx) => (
+               <span key={idx}>{t}</span>
+             ))}
+           </div>
+         </div>
+       </article>
+     ))}
+   </section>
+ )
+ 
 }

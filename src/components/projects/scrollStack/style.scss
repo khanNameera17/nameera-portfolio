@@ -1,6 +1,16 @@
 .scrollStackContainer {
  position: relative;
- background-color: #dbd5d5;
+ // background-color: #dbd5d5;
+ .projectsHeading {
+  font-size: 3rem;
+  font-weight: 700;
+  // text-align: center;
+  // margin-top: 200px;
+  color: black; // or any brand color
+  z-index: 10;
+  position: relative;
+}
+
 }
 
 .projectCard {
