@@ -42,7 +42,7 @@ const Experience = () => {
                   <div className="icon" style={{ color: icon.color }}>
                     <IconComponent />
                   </div>
-                  <p className="iconLabel">{icon.label}</p>
+                  {/* <p className="iconLabel">{icon.label}</p> */}
                 </div>
               )
             })}

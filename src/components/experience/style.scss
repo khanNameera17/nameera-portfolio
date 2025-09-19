@@ -107,7 +107,7 @@
       display: grid;
       // grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
       grid-template-columns: repeat(4, 1fr); /* same as old */
-      gap: 0.5rem;
+      gap: 2.5rem;
       justify-items: center;
       align-items: center;
       width: 100%; /* full width so grid adapts */

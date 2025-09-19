@@ -1,11 +1,8 @@
-import React from 'react'
-import "./style.scss"
-const Projects = () => {
-  return (
-    <div className='project'>
-      Projects
-    </div>
-  )
-}
+'use client'
 
-export default Projects
+import React from 'react'
+import ScrollStackProjects from './scrollStack'
+
+export default function Projects() {
+  return <ScrollStackProjects />
+}
