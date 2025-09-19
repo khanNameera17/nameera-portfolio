@@ -1,8 +1,10 @@
 import React from 'react'
-
+import "./style.scss"
 const Projects = () => {
   return (
-    <div>index</div>
+    <div className='project'>
+      Projects
+    </div>
   )
 }
 
